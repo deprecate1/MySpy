@@ -42,6 +42,7 @@ public:
 	HTREEITEM FindTreeItem(HTREEITEM startitem,CMyFindOptions* pFindOptions);
 	//void DoPopupMenu(UINT nMenuID);
 	void UpdateItem(HTREEITEM hItem);
+	void MyExpandTree(HTREEITEM hTreeItem);
 
 // Implementation
 

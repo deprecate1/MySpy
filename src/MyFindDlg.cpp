@@ -138,6 +138,7 @@ BOOL CMyFindDlg::OnInitDialog()
 	m_ctlFindMethod.InsertItem( 0, &TabCtrlItem );
 	TabCtrlItem.pszText = _T("By Mouse");
 	m_ctlFindMethod.InsertItem( 1, &TabCtrlItem );
+	//m_ctlFindMethod.SetCurSel(1);
 
 	ShowFindByMouse(SW_HIDE);
 	ShowFindText(SW_SHOW);

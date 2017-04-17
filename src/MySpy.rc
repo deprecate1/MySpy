@@ -411,7 +411,7 @@ BEGIN
             MENUITEM "Rich Edit View",              ID_WINDOWINFOPANE_RICHEIDTVIEW
         END
         MENUITEM SEPARATOR
-        MENUITEM "&Refresh",                    ID_VIEW_REFRESH
+        MENUITEM "&Refresh\tF5",                ID_VIEW_REFRESH
         MENUITEM SEPARATOR
         MENUITEM "&Options...",                 ID_VIEW_OPTIONS
     END
@@ -621,6 +621,7 @@ BEGIN
     "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
     VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
     VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_F5,          ID_VIEW_REFRESH,        VIRTKEY, NOINVERT
 END
 
 
