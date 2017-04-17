@@ -6,3 +6,8 @@ add function
 1.filter window text
 
 2.auto refresh
+
+
+screenshot:
+
+![](https://github.com/wjx0912/MySpy/blob/master/screenshot.png)
