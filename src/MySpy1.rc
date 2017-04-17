@@ -1,0 +1,614 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Hungarian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_HUN)
+#ifdef _WIN32
+LANGUAGE LANG_HUNGARIAN, SUBLANG_DEFAULT
+#pragma code_page(1250)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\MySpy.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_IMAGELIST           BITMAP                  "res\\bmp00002.bmp"
+IDR_MYSPY_TOOLBAR       BITMAP                  "res\\actionbar.bmp"
+IDR_MYSPY_VIEW_TOOLBAR  BITMAP                  "res\\viewtoolbar.bmp"
+IDB_CROSS               BITMAP                  "res\\cross.bmp"
+IDB_BLANK               BITMAP                  "res\\blank.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_POPUP_ACTION MENU 
+BEGIN
+    POPUP "Action"
+    BEGIN
+        MENUITEM "&Show",                       ID_ACTION_SHOW
+        MENUITEM "&Hide",                       ID_ACTION_HIDE
+        MENUITEM SEPARATOR
+        MENUITEM "Set In &Foreground",          ID_ACTION_SETINFOREGROUND
+        MENUITEM SEPARATOR
+        MENUITEM "&Enable",                     ID_ACTION_ENABLE
+        MENUITEM "&Disable",                    ID_ACTION_DISABLE
+        MENUITEM SEPARATOR
+        POPUP "&Mouse Events"
+        BEGIN
+            MENUITEM "&LButton Click",              ID_ACTION_LBUTTONCLICK
+            MENUITEM "&RButton Click",              ID_ACTION_END
+            MENUITEM "L&Button Double-Click",       ID_ACTION_LBUTTON_DBLCLICK
+
+            MENUITEM "RB&utton Double-Click",       ID_ACTION_RBUTTON_DBLCLICK
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Close",                      ID_ACTION_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM " ",                           ID_ACTION_END, INACTIVE
+    END
+END
+
+IDR_TOOLBAR_MENU MENU 
+BEGIN
+    POPUP "ToolbarMenu"
+    BEGIN
+        MENUITEM "&Customize",                  ID_TOOLBAR_MENU_CUSTOMIZE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MYSPY_TOOLBAR TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDB_ACTION_SHOW
+    BUTTON      IDB_ACTION_HIDE
+    BUTTON      IDB_ACTION_ENABLE
+    BUTTON      IDB_ACTION_DISABLE
+    SEPARATOR
+    BUTTON      IDB_ACTION_LBUTTONCLICK
+    BUTTON      IDB_ACTION_RBUTTONCLICK
+    BUTTON      IDB_ACTION_LBUTTON_DBLCLICK
+    BUTTON      IDB_ACTION_RBUTTON_DBLCLICK
+    SEPARATOR
+    BUTTON      IDB_ACTION_MINIMIZE
+    BUTTON      IDB_ACTION_MAXIMIZE
+    BUTTON      IDB_ACTION_CLOSE
+END
+
+IDR_MYSPY_VIEW_TOOLBAR TOOLBAR  16, 16
+BEGIN
+    BUTTON      IDB_SET_TOPMOST
+    SEPARATOR
+    BUTTON      IDB_REFRESH
+    SEPARATOR
+    BUTTON      IDB_VIEW_ALL
+    BUTTON      IDB_VIEW_VISIBLE_ONLY
+    BUTTON      IDB_VIEW_NON_VISIBLE_ONLY
+    SEPARATOR
+    BUTTON      IDB_VIEW_PARENTS
+    BUTTON      IDB_VIEW_CHILDREN_ONLY
+    SEPARATOR
+    BUTTON      IDB_HIGHLIGHT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+
+IDR_HTML_SENDMSGDLG     HTML                    "SendMsgDlg.htm"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CROSS1              CURSOR                  "res\\cursor_hot.cur"
+IDC_CROSS0              CURSOR                  "res\\cursor.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDB_SET_TOPMOST         "Sets MySpy Always on top\nAlways on top"
+END
+
+STRINGTABLE 
+BEGIN
+    IDB_ACTION_COMBO_MSG    "Select message to send\nSelect message"
+    IDB_ACTION_COMBO_L      "Select LPARAM to send with the message\nSelect LPARAM"
+    IDB_ACTION_COMBO_W      "SelectWPARAM to send with the message\nSelect WPARAM"
+    IDB_ACTION_SHOW         "Show selected window\nShow window"
+    IDB_ACTION_HIDE         "Hide selected window\nHide window"
+    IDB_ACTION_DISABLE      "Disable selected window\nDisable window"
+    IDB_ACTION_ENABLE       "Enable selected window\nEnable window"
+    IDB_ACTION_LBUTTONCLICK "Left click with mouse on selected window\nLeft click on window"
+    IDB_ACTION_RBUTTONCLICK "Right click with mouse on selected window\nRight click on window"
+END
+
+STRINGTABLE 
+BEGIN
+    IDB_ACTION_CLOSE        "Close selected window\nClose"
+    IDB_ACTION_MAXIMIZE     "Maximize window\nMaximize"
+    IDB_ACTION_MINIMIZE     "Minimize window\nMinimize"
+    IDB_ACTION_RBUTTON_DBLCLICK 
+                            "Right double-click with mouse on selected window\nRight double-click on window"
+    IDB_ACTION_LBUTTON_DBLCLICK 
+                            "Left double-click with mouse on selected window\nLeft double-click on window"
+END
+
+STRINGTABLE 
+BEGIN
+    IDB_REFRESH             "Refresh\nRefresh"
+    IDB_VIEW_VISIBLE_ONLY   "View visible only\nVisible Only"
+    IDB_VIEW_ALL            "View all\nView All"
+    IDB_VIEW_NON_VISIBLE_ONLY "View non visible only\nNon Visible Only"
+    IDB_VIEW_PARENTS        "View parents only\nParents Only"
+    IDB_VIEW_CHILDREN_ONLY  "View children only\nChildren Only"
+END
+
+STRINGTABLE 
+BEGIN
+    IDB_HIGHLIGHT           "Highlight selected window\nHighlight"
+END
+
+#endif    // Hungarian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM SEPARATOR
+        MENUITEM "Find...\tCtrl+F",             ID_EDIT_FIND
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "Stay &On Top",                IDM_STAYONTOP
+        MENUITEM SEPARATOR
+        MENUITEM "Display &Hexa Values",        ID_DISPLAY_IN_HEX
+        MENUITEM SEPARATOR
+        POPUP "&Enumeration"
+        BEGIN
+            MENUITEM "&All",                        ID_VISIBILITY_ALL
+            , CHECKED
+            MENUITEM SEPARATOR
+            MENUITEM "&Visible Only",               ID_VISIBILITY_VISIBLEONLY
+
+            MENUITEM "&Non Visible Only",           ID_VISIBILITY_NONVISIBLEONLY
+
+            MENUITEM SEPARATOR
+            MENUITEM "&Parents Only",               ID_PARENT_PARENTSONLY
+            MENUITEM "&Childs Only",                ID_PARENT_CHILDONLY
+        END
+        MENUITEM SEPARATOR
+        POPUP "&ToolBars"
+        BEGIN
+            MENUITEM "&Main Toolbar",               ID_TOOLBARS_MAINTOOLBAR
+            MENUITEM "&Action Toolbar",             ID_VIEW_TOOLBAR
+            MENUITEM "&PostMessage Toolbar",        ID_TOOLBARS_POST_MSG_TB
+        END
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About MySpy...",             ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\MySpy.ico"
+IDR_MySpyTYPE           ICON                    "res\\MySpyDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_EDIT_FIND,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "About MySpy"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "MySpy Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_FIND_DLG DIALOGEX 0, 0, 246, 66
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Find"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Find next",ID_FIND_FINDNEXT,189,7,50,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,189,24,50,14
+    COMBOBOX        IDC_FIND_DLG_EDIT_BOX,49,7,135,52,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Match ca&se",IDC_CHECK_MATCHCASE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,49,54,10
+    LTEXT           "Find what:",IDC_STATIC,7,7,37,12,SS_CENTERIMAGE
+    GROUPBOX        "Direction",IDC_STATIC,115,27,69,32
+    CONTROL         "&Up",IDC_RADIO_UP,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,125,41,25,10
+    CONTROL         "&Down",IDC_RADIO_DOWN,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,149,41,34,10
+END
+
+IDD_SEND_MSG DIALOGEX 0, 0, 93, 180
+STYLE DS_SETFONT | DS_3DLOOK | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Message Id:",IDC_STATIC,9,15,40,8
+    LTEXT           "LParam:",IDC_STATIC,9,67,27,8
+    LTEXT           "WParam:",IDC_STATIC,9,41,30,8
+    PUSHBUTTON      "&PostMessage",IDB_POST_MESSAGE,9,93,75,14
+    COMBOBOX        IDC_COMBO_MSG,9,26,75,51,CBS_DROPDOWN | CBS_AUTOHSCROLL | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_WPARAM,9,52,75,51,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_LPARAM,9,78,75,51,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "SetWindowText:",IDC_STATIC_SETTEXT,9,125,54,8
+    EDITTEXT        IDC_EDIT_SETTEXT,9,136,75,12,ES_AUTOHSCROLL
+    GROUPBOX        "Post Message",IDC_STATIC,5,3,83,112
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "MySpy.exe"
+            VALUE "LegalCopyright", "(c) Sysdata Kft.  All rights reserved."
+            VALUE "OriginalFilename", "MySpy.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_FIND_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_SEND_MSG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 88
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 173
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "MySpy\n\nMySpy\n\n\nMySpy.Document\nMySpy.Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "MySpy"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VISIBILITY_ALL       "Show visible and non visible windows"
+    IDB_SET_TOPMOST         "Sets MySpy Always on top\nAlways on top"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INFO_IN_STATUS_BAR   "Made by Mata©"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\MySpy.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
