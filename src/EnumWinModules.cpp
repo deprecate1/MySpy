@@ -145,6 +145,7 @@ int CEnumWinModules::Process(int nFilter)
 
     // set filter
     m_nFilter = nFilter;
+   // m_strFilter = L"";
 
     // clear all
     Clear();

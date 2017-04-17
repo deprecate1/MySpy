@@ -98,6 +98,9 @@ protected:
 	CArray<sWindowInfo*, sWindowInfo*> m_aWindows;
 	CArray<CString, CString> m_aExclusions;
 	int m_nFilter;
+
+public:
+	CString	m_strFilter;
 };
 
 #endif // !defined(AFX_ENUMWINMODULES_H__86C7CD44_E90B_4844_97DB_FE2043DC6CBF__INCLUDED_)

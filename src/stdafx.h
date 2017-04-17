@@ -48,3 +48,4 @@
 
 #include "xtrace/xtrace.h"
 #include "xtrace/printbin.h"
+#include <afxcontrolbars.h>

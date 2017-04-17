@@ -9,6 +9,7 @@
 #include ".\mytreeview.h"
 
 #include "MainFrm.h"
+#include "InputDialog.h"
 
 
 #ifdef _DEBUG
@@ -486,7 +487,17 @@ void CMyTreeView::OnMenuEditFind()
 
 void CMyTreeView::OnMenuEditFilter()
 {
+	CMainFrame* mf = (CMainFrame*)GetParentFrame();
 	XTRACE(L"menu filter click.\n");
+
+	CInputDialog dlg;
+	dlg.m_strInput = mf->GetFilterString();
+	dlg.DoModal();
+
+	if (!dlg.m_strInput.IsEmpty()) {
+		mf->SetFilterString(dlg.m_strInput);
+		mf->OnViewRefresh();
+	}
 }
 
 LRESULT CMyTreeView::FindFindnext(WPARAM wParam, LPARAM lParam)

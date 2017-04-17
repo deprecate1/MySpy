@@ -44,6 +44,9 @@ public:
 	static void GetClassNameString(HWND hWnd, CString& strOutput);
 	static void GetClassStyleString(HWND hWnd, CString& strOutput);
 
+	CString GetFilterString();
+	void SetFilterString(CString filter);
+
 
 // Overrides
 	virtual BOOL OnNewDocument();

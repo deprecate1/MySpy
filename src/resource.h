@@ -25,6 +25,7 @@
 #define IDC_CROSS0                      144
 #define IDR_POPUP_WININFO               145
 #define IDD_COMMAND_OPTIONS_DLG         146
+#define IDD_DIALOG_INPUT_DIALOG         151
 #define IDC_FIND_DLG_EDIT_BOX           1000
 #define IDC_CHECK_MATCHCASE             1001
 #define IDC_FIND_CHECK_MATCHCASE        1002
@@ -69,6 +70,9 @@
 #define IDC_STATIC_TRANSPARENCY         1048
 #define IDC_SPIN_AUTO_REFRESH           1049
 #define IDC_EDIT_AUTO_REFRESH           1050
+#define IDC_BUTTON_INPUT_OK             1051
+#define IDC_EDIT_INPUT                  1052
+#define IDC_BUTTON_INPUT_CANCEL         1053
 #define ID_VIEW_VISIBILITY              32771
 #define ID_VISIBILITY_ALL               32772
 #define ID_VISIBILITY_VISIBLEONLY       32773
@@ -137,9 +141,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        151
+#define _APS_NEXT_RESOURCE_VALUE        152
 #define _APS_NEXT_COMMAND_VALUE         32864
-#define _APS_NEXT_CONTROL_VALUE         1051
+#define _APS_NEXT_CONTROL_VALUE         1054
 #define _APS_NEXT_SYMED_VALUE           105
 #endif
 #endif

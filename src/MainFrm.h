@@ -126,6 +126,9 @@ protected:  // control bar embedded members
 
 
 	afx_msg void OnEnChangeEditAutoRefresh();		// change spin value: auto refresh
+public:
+	CString GetFilterString();
+	void SetFilterString(CString filter);
 
 private:
 	void ErrorMsgBox(DWORD dw);

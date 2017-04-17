@@ -1031,6 +1031,26 @@ void CMainFrame::OnViewRefresh()
 	pDoc->Refresh();
 }
 
+CString CMainFrame::GetFilterString()
+{
+	CMySpyDoc* pDoc = (CMySpyDoc*)GetActiveDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return L"";
+
+	return pDoc->GetFilterString();
+}
+
+void CMainFrame::SetFilterString(CString filter)
+{
+	CMySpyDoc* pDoc = (CMySpyDoc*)GetActiveDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+
+	pDoc->SetFilterString(filter);
+}
+
 void CMainFrame::RefreshTreePane()
 {
 	m_pTreeViewPane->UpdateWindow();

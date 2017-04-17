@@ -320,3 +320,14 @@ BOOL CMySpyDoc::SaveModified(void)
 }
 
 
+CString CMySpyDoc::GetFilterString()
+{
+	return m_oEnumWins.m_strFilter;
+}
+
+void CMySpyDoc::SetFilterString(CString filter)
+{
+	m_oEnumWins.m_strFilter = filter;
+}
+
+
