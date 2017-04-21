@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ 生成的包含文件。
-// 供 MySpy.rc 使用
+// Microsoft Visual C++ generated include file.
+// Used by MySpy.rc
 //
 #define IDS_TEXT_NOT_FOUND              1
 #define IDD_ABOUTBOX                    100
@@ -73,6 +73,9 @@
 #define IDC_BUTTON_INPUT_OK             1051
 #define IDC_EDIT_INPUT                  1052
 #define IDC_BUTTON_INPUT_CANCEL         1053
+#define IDC_BUTTON2                     1054
+#define IDC_BUTTON3                     1055
+#define IDC_BUTTON_AUTO_CAPTURE         1055
 #define ID_VIEW_VISIBILITY              32771
 #define ID_VISIBILITY_ALL               32772
 #define ID_VISIBILITY_VISIBLEONLY       32773
@@ -143,7 +146,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        152
 #define _APS_NEXT_COMMAND_VALUE         32866
-#define _APS_NEXT_CONTROL_VALUE         1054
+#define _APS_NEXT_CONTROL_VALUE         1056
 #define _APS_NEXT_SYMED_VALUE           105
 #endif
 #endif

@@ -54,6 +54,7 @@ public:
     afx_msg void OnBnClickedOk();
     afx_msg void OnCbnEditchangeFindDlgEditBox();
     afx_msg void OnBnClickedFindFindNext();
+    afx_msg void OnBnClickedAutoCapture();
 	afx_msg void OnTcnSelchangeTab1(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
@@ -81,4 +82,6 @@ private:
 	BOOL m_bHideMySpy;
 	CMyFindOptions m_FindOptions; 
 	CTabCtrl m_ctlFindMethod;
+
+	BOOL		m_bAutoCapture;
 };

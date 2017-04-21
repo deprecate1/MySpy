@@ -54,6 +54,7 @@ IMPLEMENT_DYNAMIC(CMyFindDlg, CDialog)
 CMyFindDlg::CMyFindDlg(CWnd* pParent /*=NULL*/)
     : CDialog(CMyFindDlg::IDD, pParent)
 	, m_bHideMySpy(FALSE)
+	, m_bAutoCapture(FALSE)
 	, m_strToFind(_T(""))
 {
 	HINSTANCE hInst = AfxGetInstanceHandle();
@@ -102,8 +103,9 @@ void CMyFindDlg::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CMyFindDlg, CDialog)
-    ON_CBN_EDITCHANGE(IDC_FIND_DLG_EDIT_BOX, OnCbnEditchangeFindDlgEditBox)
-    ON_BN_CLICKED(IDC_FIND_FINDNEXT, OnBnClickedFindFindNext)
+	ON_CBN_EDITCHANGE(IDC_FIND_DLG_EDIT_BOX, OnCbnEditchangeFindDlgEditBox)
+	ON_BN_CLICKED(IDC_FIND_FINDNEXT, OnBnClickedFindFindNext)
+	ON_BN_CLICKED(IDC_BUTTON_AUTO_CAPTURE, OnBnClickedAutoCapture)
 	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB1, OnTcnSelchangeTab1)
 	ON_WM_MOUSEMOVE()
 	ON_WM_LBUTTONDOWN()
@@ -213,6 +215,23 @@ void CMyFindDlg::OnBnClickedFindFindNext()
 	//ActivateTopParent();
 }
 
+void CMyFindDlg::OnBnClickedAutoCapture()
+{
+	//(CButton*)GetDlgItem(IDC_BUTTON_AUTO_CAPTURE)->EnableWindow(FALSE);
+	ShowWindow(FALSE);
+
+	// =============================================
+	{
+		::SetCursor(m_hCurCross);
+		::SendMessage(m_hStatic, (WPARAM)STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)m_hBmpBlank);
+		::SetCapture(m_hWnd);
+		m_bCapture = true;
+	}
+	// =============================================
+
+	m_bAutoCapture = true;
+}
+
 void CMyFindDlg::OnOK()
 {
     OnBnClickedFindFindNext();
@@ -281,7 +300,7 @@ void CMyFindDlg::OnMouseMove(UINT nFlags, CPoint point)
 			::ClientToScreen (hDlg, &pt);
 			OnMouseMove (hDlg, pt);
 		}*/
-	if(m_bCapture)
+	if (m_bCapture || m_bAutoCapture)
 	{
 		::ClientToScreen (m_hWnd, &point);
 		HWND hWnd = SmallestWindowFromPoint (point);
@@ -393,45 +412,44 @@ void CMyFindDlg::OnLButtonDown(UINT nFlags, CPoint pt)
 
 void CMyFindDlg::OnLButtonUp(UINT nFlags, CPoint point)
 {
-	
-	if( m_bCapture )
-	{
-		if( m_hWndOld )
-		{
-			CMainFrame::HighlightWindow(m_hWndOld);
-		}
-		m_hWndOld = NULL;
 
-		::SetCursor( m_hCurNormal );
-		::SendMessage (m_hStatic,(WPARAM)STM_SETIMAGE,IMAGE_BITMAP,(LPARAM)m_hBmpCross);
-		::ReleaseCapture();
-		if(m_bHideMySpy)
-		{
-			CheckDlgButton(IDC_FINDBYMOUSE_HIDE_MYSPY,MF_UNCHECKED);
-			OnBnClickedFindbymouseHideMyspy();
+	if (!m_bAutoCapture) {
+		if (m_bCapture) {
+			if (m_hWndOld) {
+				CMainFrame::HighlightWindow(m_hWndOld);
+			}
+			m_hWndOld = NULL;
+
+			::SetCursor(m_hCurNormal);
+			::SendMessage(m_hStatic, (WPARAM)STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)m_hBmpCross);
+			::ReleaseCapture();
+			if (m_bHideMySpy) {
+				CheckDlgButton(IDC_FINDBYMOUSE_HIDE_MYSPY, MF_UNCHECKED);
+				OnBnClickedFindbymouseHideMyspy();
+			}
+			m_bCapture = false;
 		}
-		m_bCapture = false;
 	}
 	CDialog::OnLButtonUp(nFlags, point);
 }
 
 void CMyFindDlg::OnKillFocus(CWnd* pNewWnd)
 {   
-	if( m_bCapture )
-	{
-		if( m_hWndOld )
-			CMainFrame::HighlightWindow(m_hWndOld);
-		m_hWndOld = NULL;
+	if (!m_bAutoCapture) {
+		if (m_bCapture) {
+			if (m_hWndOld)
+				CMainFrame::HighlightWindow(m_hWndOld);
+			m_hWndOld = NULL;
 
-		::SetCursor( m_hCurNormal );
-		::SendMessage (m_hStatic,(WPARAM)STM_SETIMAGE,IMAGE_BITMAP,(LPARAM)m_hBmpCross);
-		::ReleaseCapture();
-		if(m_bHideMySpy)
-		{
-			CheckDlgButton(IDC_FINDBYMOUSE_HIDE_MYSPY,MF_UNCHECKED);
-			OnBnClickedFindbymouseHideMyspy();
+			::SetCursor(m_hCurNormal);
+			::SendMessage(m_hStatic, (WPARAM)STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)m_hBmpCross);
+			::ReleaseCapture();
+			if (m_bHideMySpy) {
+				CheckDlgButton(IDC_FINDBYMOUSE_HIDE_MYSPY, MF_UNCHECKED);
+				OnBnClickedFindbymouseHideMyspy();
+			}
+			m_bCapture = false;
 		}
-		m_bCapture = false;
 	}
 	
 	CDialog::OnKillFocus(pNewWnd);
@@ -441,21 +459,21 @@ void CMyFindDlg::OnActivate(UINT nState, CWnd* pWndOther, BOOL bMinimized)
 {
 	CDialog::OnActivate(nState, pWndOther, bMinimized);
 	
-	if(m_bCapture && (nState==WA_INACTIVE) && pWndOther!=(CWnd*)GetParentFrame())
-	{
-		if( m_hWndOld )
-			CMainFrame::HighlightWindow(m_hWndOld);
-		m_hWndOld = NULL;
+	if (!m_bAutoCapture) {
+		if (m_bCapture && (nState == WA_INACTIVE) && pWndOther != (CWnd*)GetParentFrame()) {
+			if (m_hWndOld)
+				CMainFrame::HighlightWindow(m_hWndOld);
+			m_hWndOld = NULL;
 
-		::SetCursor( m_hCurNormal );
-		::SendMessage (m_hStatic,(WPARAM)STM_SETIMAGE,IMAGE_BITMAP,(LPARAM)m_hBmpCross);
-		::ReleaseCapture();
-		if(m_bHideMySpy)
-		{
-			CheckDlgButton(IDC_FINDBYMOUSE_HIDE_MYSPY,MF_UNCHECKED);
-			OnBnClickedFindbymouseHideMyspy();
+			::SetCursor(m_hCurNormal);
+			::SendMessage(m_hStatic, (WPARAM)STM_SETIMAGE, IMAGE_BITMAP, (LPARAM)m_hBmpCross);
+			::ReleaseCapture();
+			if (m_bHideMySpy) {
+				CheckDlgButton(IDC_FINDBYMOUSE_HIDE_MYSPY, MF_UNCHECKED);
+				OnBnClickedFindbymouseHideMyspy();
+			}
+			m_bCapture = false;
 		}
-		m_bCapture = false;
 	}
 }
 

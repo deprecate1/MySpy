@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文(简体，中国) resources
+// Chinese (Simplified, PRC) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -53,16 +53,78 @@ BEGIN
 END
 #endif    // APSTUDIO_INVOKED
 
-#endif    // 中文(简体，中国) resources
+#endif    // Chinese (Simplified, PRC) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 匈牙利语(匈牙利) resources
+// Hungarian (Hungary) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_HUN)
 LANGUAGE LANG_HUNGARIAN, SUBLANG_DEFAULT
 #pragma code_page(1250)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_COMMAND_OPTIONS_DLG DIALOGEX 0, 0, 225, 135
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Actions"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "on success",IDC_RESPONSE_ON_SUCCESS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,73,29,138,10
+    CONTROL         "on error",IDC_RESPONSE_ON_ERROR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,73,19,138,10
+    CONTROL         "no response",IDC_NO_RESPONSE_ABOUT_COMMAND_EXECUTION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,73,39,138,10
+    GROUPBOX        "Response about command execution",IDC_STATIC,7,7,211,48
+    EDITTEXT        IDC_EDIT_REPONSE_TIMEOUT,97,68,40,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Response timeout:",IDC_STATIC,36,73,62,8,0,WS_EX_TRANSPARENT
+    LTEXT           "ms",IDC_STATIC,141,73,10,8
+    CONTROL         "Get back focus after command excecution",IDC_ACTIVATE_AFTER_ACTION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,36,108,150,10
+    GROUPBOX        "Timeout",IDC_STATIC,7,55,211,36
+    GROUPBOX        "Focus",IDC_STATIC,7,92,211,36
+END
+
+IDD_OPTION_PROPERTYPAGE DIALOG 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,16
+    PUSHBUTTON      "Cancel",IDCANCEL,129,26,50,16
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_COMMAND_OPTIONS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 218
+        VERTGUIDE, 36
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_OPTION_PROPERTYPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -216,68 +278,6 @@ IDC_CROSS0              CURSOR                  "res\\cursor.cur"
 
 /////////////////////////////////////////////////////////////////////////////
 //
-// Dialog
-//
-
-IDD_COMMAND_OPTIONS_DLG DIALOGEX 0, 0, 225, 135
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Actions"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
-BEGIN
-    CONTROL         "on success",IDC_RESPONSE_ON_SUCCESS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,73,29,138,10
-    CONTROL         "on error",IDC_RESPONSE_ON_ERROR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,73,19,138,10
-    CONTROL         "no response",IDC_NO_RESPONSE_ABOUT_COMMAND_EXECUTION,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,73,39,138,10
-    GROUPBOX        "Response about command execution",IDC_STATIC,7,7,211,48
-    EDITTEXT        IDC_EDIT_REPONSE_TIMEOUT,97,68,40,12,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER
-    LTEXT           "Response timeout:",IDC_STATIC,36,73,62,8,0,WS_EX_TRANSPARENT
-    LTEXT           "ms",IDC_STATIC,141,73,10,8
-    CONTROL         "Get back focus after command excecution",IDC_ACTIVATE_AFTER_ACTION,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,36,108,150,10
-    GROUPBOX        "Timeout",IDC_STATIC,7,55,211,36
-    GROUPBOX        "Focus",IDC_STATIC,7,92,211,36
-END
-
-IDD_OPTION_PROPERTYPAGE DIALOG 0, 0, 186, 95
-STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Dialog"
-FONT 8, "MS Sans Serif"
-BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,129,7,50,16
-    PUSHBUTTON      "Cancel",IDCANCEL,129,26,50,16
-END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// DESIGNINFO
-//
-
-#ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
-BEGIN
-    IDD_COMMAND_OPTIONS_DLG, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 218
-        VERTGUIDE, 36
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 128
-    END
-
-    IDD_OPTION_PROPERTYPAGE, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 179
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 88
-    END
-END
-#endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // String Table
 //
 
@@ -348,16 +348,158 @@ BEGIN
     IDS_TEXT_NOT_FOUND      "The specified text was not found."
 END
 
-#endif    // 匈牙利语(匈牙利) resources
+#endif    // Hungarian (Hungary) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// 英语(美国) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 57
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About MySpy"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "MySpy Version 1.3",IDC_STATIC,40,10,87,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2017",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_FIND_DLG DIALOGEX 0, 0, 319, 85
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Find Window"
+CLASS "MySpy_FindDialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Find Next",IDC_FIND_FINDNEXT,262,22,50,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,262,39,50,14
+    COMBOBOX        IDC_FIND_DLG_EDIT_BOX,49,22,135,52,CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Match ca&se",IDC_FIND_CHECK_MATCHCASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,65,54,10
+    LTEXT           "Find what:",IDC_FIND_STATIC_FINDWHAT,7,23,37,12,SS_CENTERIMAGE
+    GROUPBOX        "Direction",IDC_FIND_STATIC_DIRECTION,115,43,69,32
+    CONTROL         "&Up",IDC_FIND_RADIO_UP,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,125,57,25,10
+    CONTROL         "&Down",IDC_FIND_RADIO_DOWN,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,149,57,34,10
+    CONTROL         "",IDC_TAB1,"SysTabControl32",TCS_TOOLTIPS | WS_GROUP,0,1,253,83,WS_EX_ACCEPTFILES
+    CONTROL         IDB_CROSS,IDC_FINDBYMOUSE_CAPTURE,"Static",SS_BITMAP,15,56,21,17
+    CONTROL         "Specify the window by draging the finder tool\nover a window to select it, then releasing the\nmouse button.",IDC_FINDBYMOUSE_STATIC,
+                    "Static",SS_LEFTNOWORDWRAP | WS_GROUP,16,25,145,23
+    CONTROL         "Hide MySpy",IDC_FINDBYMOUSE_HIDE_MYSPY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,130,64,53,10
+    LTEXT           "HWND: N/A",IDC_FINDBYMOUSE_SELECTED_HWND,41,64,88,10
+    PUSHBUTTON      "Button2",IDC_BUTTON2,200,56,50,14
+    PUSHBUTTON      "Auto Capture",IDC_BUTTON_AUTO_CAPTURE,262,65,50,14
+END
+
+IDD_SEND_MSG DIALOGEX 0, 0, 94, 265
+STYLE DS_SETFONT | DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | WS_BORDER
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Post Message",IDC_STATIC,5,3,84,148
+    LTEXT           "Message Id:",IDC_STATIC,9,15,40,8
+    COMBOBOX        IDC_COMBO_MSG,9,26,75,51,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "WParam:",IDC_STATIC,9,41,30,8
+    COMBOBOX        IDC_COMBO_WPARAM,9,52,75,51,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "LParam:",IDC_STATIC,9,67,27,8
+    COMBOBOX        IDC_COMBO_LPARAM,9,78,75,51,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&PostMessage",IDB_POST_MESSAGE,9,96,75,14
+    PUSHBUTTON      "&SendMessage",IDB_SEND_MESSAGE,9,116,75,14
+    CONTROL         "&Broadcast",IDC_CHECK_BROADCAST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,136,56,10
+    LTEXT           "SetWindowText:",IDC_STATIC_SETTEXT,9,159,54,8
+    EDITTEXT        IDC_EDIT_SETTEXT,9,170,75,12,ES_AUTOHSCROLL
+    GROUPBOX        "Transparency",IDC_STATIC_TRANSPARENCY,5,189,84,51
+    CONTROL         "Make Transparent",IDC_CHECK_TRANSPARENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,204,74,10
+    CONTROL         "",IDC_SLIDER_TRANSPARENCY,"msctls_trackbar32",TBS_TOP | WS_TABSTOP,9,214,71,23
+    LTEXT           "AutoRefresh: ",IDC_STATIC,6,246,43,12
+    EDITTEXT        IDC_EDIT_AUTO_REFRESH,54,246,28,14,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    CONTROL         "",IDC_SPIN_AUTO_REFRESH,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,82,246,11,14
+END
+
+IDD_WINDOW_INFO_VIEW_OPTIONS DIALOGEX 0, 0, 227, 163
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_NOFAILCREATE | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Window Informations"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "&Up",IDC_UP,169,37,50,14
+    PUSHBUTTON      "&Down",IDC_DOWN,169,54,50,14
+    CONTROL         "",IDC_WIN_INFO_LIST,"SysListView32",LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,14,37,147,119
+    COMBOBOX        IDC_TREE_OR_INFO_COMBO,14,18,147,36,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select required window infos on:",IDC_STATIC,14,7,108,8
+END
+
+IDD_LOAD_SAVE_PROPERTYPAGE DIALOGEX 0, 0, 210, 154
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Load/Save"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "Save settings on exit",IDC_SAVE_SETTINGS_ON_EXIT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,23,113,83,10
+    PUSHBUTTON      "Load defaults",IDC_LOAD_DEFAULTS,139,111,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_FIND_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_SEND_MSG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 89
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 258
+    END
+
+    IDD_WINDOW_INFO_VIEW_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        VERTGUIDE, 14
+        VERTGUIDE, 161
+        VERTGUIDE, 169
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+        HORZGUIDE, 37
+        HORZGUIDE, 128
+    END
+
+    IDD_LOAD_SAVE_PROPERTYPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -448,146 +590,6 @@ BEGIN
     BUTTON      ID_FILE_PRINT
     BUTTON      ID_APP_ABOUT
 END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Dialog
-//
-
-IDD_ABOUTBOX DIALOGEX 0, 0, 235, 57
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "About MySpy"
-FONT 8, "MS Shell Dlg", 0, 0, 0x1
-BEGIN
-    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
-    LTEXT           "MySpy Version 1.3",IDC_STATIC,40,10,87,8,SS_NOPREFIX
-    LTEXT           "Copyright (C) 2017",IDC_STATIC,40,25,119,8
-    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
-END
-
-IDD_FIND_DLG DIALOGEX 0, 0, 254, 85
-STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Find Window"
-CLASS "MySpy_FindDialog"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
-BEGIN
-    DEFPUSHBUTTON   "&Find Next",IDC_FIND_FINDNEXT,197,22,50,14,WS_DISABLED
-    PUSHBUTTON      "Cancel",IDCANCEL,197,39,50,14
-    COMBOBOX        IDC_FIND_DLG_EDIT_BOX,49,22,135,52,CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Match ca&se",IDC_FIND_CHECK_MATCHCASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,65,54,10
-    LTEXT           "Find what:",IDC_FIND_STATIC_FINDWHAT,7,23,37,12,SS_CENTERIMAGE
-    GROUPBOX        "Direction",IDC_FIND_STATIC_DIRECTION,115,43,69,32
-    CONTROL         "&Up",IDC_FIND_RADIO_UP,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,125,57,25,10
-    CONTROL         "&Down",IDC_FIND_RADIO_DOWN,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,149,57,34,10
-    CONTROL         "",IDC_TAB1,"SysTabControl32",TCS_TOOLTIPS | WS_GROUP,0,1,253,83,WS_EX_ACCEPTFILES
-    CONTROL         IDB_CROSS,IDC_FINDBYMOUSE_CAPTURE,"Static",SS_BITMAP,15,56,21,17
-    CONTROL         "Specify the window by draging the finder tool\nover a window to select it, then releasing the\nmouse button.",IDC_FINDBYMOUSE_STATIC,
-                    "Static",SS_LEFTNOWORDWRAP | WS_GROUP,16,25,145,23
-    CONTROL         "Hide MySpy",IDC_FINDBYMOUSE_HIDE_MYSPY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,130,64,53,10
-    LTEXT           "HWND: N/A",IDC_FINDBYMOUSE_SELECTED_HWND,41,64,88,10
-END
-
-IDD_SEND_MSG DIALOGEX 0, 0, 94, 265
-STYLE DS_SETFONT | DS_3DLOOK | DS_FIXEDSYS | WS_CHILD | WS_BORDER
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
-BEGIN
-    GROUPBOX        "Post Message",IDC_STATIC,5,3,84,148
-    LTEXT           "Message Id:",IDC_STATIC,9,15,40,8
-    COMBOBOX        IDC_COMBO_MSG,9,26,75,51,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "WParam:",IDC_STATIC,9,41,30,8
-    COMBOBOX        IDC_COMBO_WPARAM,9,52,75,51,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "LParam:",IDC_STATIC,9,67,27,8
-    COMBOBOX        IDC_COMBO_LPARAM,9,78,75,51,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    PUSHBUTTON      "&PostMessage",IDB_POST_MESSAGE,9,96,75,14
-    PUSHBUTTON      "&SendMessage",IDB_SEND_MESSAGE,9,116,75,14
-    CONTROL         "&Broadcast",IDC_CHECK_BROADCAST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,136,56,10
-    LTEXT           "SetWindowText:",IDC_STATIC_SETTEXT,9,159,54,8
-    EDITTEXT        IDC_EDIT_SETTEXT,9,170,75,12,ES_AUTOHSCROLL
-    GROUPBOX        "Transparency",IDC_STATIC_TRANSPARENCY,5,189,84,51
-    CONTROL         "Make Transparent",IDC_CHECK_TRANSPARENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,204,74,10
-    CONTROL         "",IDC_SLIDER_TRANSPARENCY,"msctls_trackbar32",TBS_TOP | WS_TABSTOP,9,214,71,23
-    LTEXT           "AutoRefresh: ",IDC_STATIC,6,246,43,12
-    EDITTEXT        IDC_EDIT_AUTO_REFRESH,54,246,28,14,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
-    CONTROL         "",IDC_SPIN_AUTO_REFRESH,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,82,246,11,14
-END
-
-IDD_WINDOW_INFO_VIEW_OPTIONS DIALOGEX 0, 0, 227, 163
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_NOFAILCREATE | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Window Informations"
-FONT 8, "MS Shell Dlg", 0, 0, 0x0
-BEGIN
-    PUSHBUTTON      "&Up",IDC_UP,169,37,50,14
-    PUSHBUTTON      "&Down",IDC_DOWN,169,54,50,14
-    CONTROL         "",IDC_WIN_INFO_LIST,"SysListView32",LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,14,37,147,119
-    COMBOBOX        IDC_TREE_OR_INFO_COMBO,14,18,147,36,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Select required window infos on:",IDC_STATIC,14,7,108,8
-END
-
-IDD_LOAD_SAVE_PROPERTYPAGE DIALOGEX 0, 0, 210, 154
-STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
-CAPTION "Load/Save"
-FONT 8, "MS Shell Dlg", 0, 0, 0x0
-BEGIN
-    CONTROL         "Save settings on exit",IDC_SAVE_SETTINGS_ON_EXIT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,23,113,83,10
-    PUSHBUTTON      "Load defaults",IDC_LOAD_DEFAULTS,139,111,50,14
-END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// DESIGNINFO
-//
-
-#ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
-BEGIN
-    IDD_ABOUTBOX, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 228
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 50
-    END
-
-    IDD_FIND_DLG, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 247
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 78
-    END
-
-    IDD_SEND_MSG, DIALOG
-    BEGIN
-        LEFTMARGIN, 5
-        RIGHTMARGIN, 89
-        TOPMARGIN, 3
-        BOTTOMMARGIN, 258
-    END
-
-    IDD_WINDOW_INFO_VIEW_OPTIONS, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 219
-        VERTGUIDE, 14
-        VERTGUIDE, 161
-        VERTGUIDE, 169
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 156
-        HORZGUIDE, 37
-        HORZGUIDE, 128
-    END
-
-    IDD_LOAD_SAVE_PROPERTYPAGE, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 203
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 147
-    END
-END
-#endif    // APSTUDIO_INVOKED
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -785,7 +787,7 @@ BEGIN
     ID_INFO_IN_STATUS_BAR   "Made by Mata"
 END
 
-#endif    // 英语(美国) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
